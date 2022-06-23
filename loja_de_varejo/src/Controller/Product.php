@@ -1,8 +1,12 @@
 <?php
-$productName = $_POST["name"];
-$productPrice = $_POST["price"];
-$productQuantity = $_POST["quantity"];
+namespace APP\Controller;
 
-echo "<p>Nome do produto: $productName</p>";
-echo "<p>Preço do produto: $productPrice</p>";
-echo "<p>Quantidade do produto: $productQuantity</p>";
+if(empty($_POST)){
+    
+}
+
+$productName = $_POST["name"];
+$productQuantity = $_POST["quantity"];
+$productCost = $_POST["cost"];
+$productProvider = $_POST["provider"];
+$barCode = $_POST["barCode"];

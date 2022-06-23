@@ -567,6 +567,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .flex {
   display: flex;
 }
@@ -578,6 +582,11 @@ video {
 .columns-3 {
   -moz-columns: 3;
        columns: 3;
+}
+
+.columns-2 {
+  -moz-columns: 2;
+       columns: 2;
 }
 
 .justify-center {
