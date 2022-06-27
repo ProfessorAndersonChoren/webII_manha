@@ -1,8 +1,16 @@
 <?php
+
 namespace APP\Controller;
 
-if(empty($_POST)){
-    
+require_once '../../vendor/autoload.php';
+
+use APP\Utils\Redirect;
+
+if (empty($_POST)) {
+    Redirect::redirect(
+        type: 'error',
+        message: 'Requisição inválida!!!'
+    );
 }
 
 $productName = $_POST["name"];

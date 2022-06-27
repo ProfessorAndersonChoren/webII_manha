@@ -20,5 +20,6 @@ class Redirect
             else
                 $_SESSION['msg_success'] = $message;
         }
+        header("location:$url");
     }
 }
