@@ -11,13 +11,15 @@ class Redirect
     ) {
         session_start();
         if (is_array($message)) {
-            // TODO Implementar a leitura do array
+            $error = '';
+            foreach($message as $msg){
+                $error .= "<li>$msg</li>";
+            }
+            $_SESSION['msg_warning'] = $error;
         } else {
             if ($type == 'error')
                 $_SESSION['msg_error'] = $message;
-            else if ($type == 'warning')
-                $_SESSION['msg_warning'] = $message;
-            else
+            else if ($type == 'success')
                 $_SESSION['msg_success'] = $message;
         }
         header("location:$url");

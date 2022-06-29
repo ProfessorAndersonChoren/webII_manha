@@ -17,11 +17,11 @@
             header('location:../../index.html');
             exit;
         }
-        if (!empty($_SERVER['msg_success'])) :
+        if (!empty($_SESSION['msg_success'])) :
         ?>
             <article class="w-2/4 text-white bg-green-700 rounded p-9">
                 <p class="text-center">
-                    <?= $_SERVER['msg_success'] ?>
+                    <?= $_SESSION['msg_success'] ?>
                 </p>
                 <a class="underline" href="#" onclick="window.history.back()">Voltar</a>
             </article>
@@ -33,9 +33,9 @@
         if (!empty($_SESSION['msg_warning'])) :
         ?>
             <article class="w-2/4 text-white bg-orange-700 rounded p-9">
-                <p class="text-center">
-                    <?= $_SERVER['msg_warning'] ?>
-                </p>
+                <ul>
+                    <?= $_SESSION['msg_warning'] ?>
+                </ul>
                 <a class="underline" href="#" onclick="window.history.back()">Voltar</a>
             </article>
         <?php
