@@ -16,6 +16,6 @@ class Validation
 
     public static function validateBarCode(string $barCode):bool
     {
-        return mb_strlen($barCode) == 13 && mb_substr($barCode, 0, 2) == '789';
+        return mb_strlen($barCode) == 13 && mb_substr($barCode, 0, 3) == '789';
     }
 }

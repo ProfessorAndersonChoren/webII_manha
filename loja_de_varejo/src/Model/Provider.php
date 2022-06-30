@@ -2,11 +2,9 @@
 
 namespace APP\Model;
 
-class Provider{
+class Provider
+{
     private int $cnpj;
     private string $name;
     private Address $address;
 }
-
-    
-
