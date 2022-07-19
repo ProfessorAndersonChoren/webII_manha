@@ -4,6 +4,7 @@ namespace APP\Controller;
 
 require_once '../../vendor/autoload.php';
 
+use APP\Model\DAO\ProductDAO;
 use APP\Utils\Redirect;
 use APP\Model\Validation;
 use APP\Model\Product;
@@ -48,14 +49,22 @@ if ($error) { // Se o array NÃO estiver vazio
 } else {
     $product = new Product(
         name: $productName,
-        barCode:$barCode,
+        barCode: $barCode,
         fixedCost: 0.5,
-        cost:$productCost,
-        tributes:0.75,
-        quantity:$productQuantity,
-        provider:new Provider()
+        cost: $productCost,
+        tributes: 0.75,
+        quantity: $productQuantity,
+        provider: new Provider()
     );
-    Redirect::redirect(
-        message: 'Produto cadastrado com sucesso!!!'
-    );
+    $dao = new ProductDAO();
+    $result = $dao->insert($product);
+    if ($result)
+        Redirect::redirect(
+            message: 'Produto cadastrado com sucesso!!!'
+        );
+    else
+        Redirect::redirect(
+            message: 'Não foi possível cadastrar o produto!!!',
+            type: 'error'
+        );
 }

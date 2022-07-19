@@ -21,8 +21,7 @@ class Product
         Provider $provider,
         float $lucre = 0.2,
         bool $isActive = true
-    )
-    {
+    ) {
         // Inicializando as propriedades
         $this->barCode = $barCode;
         $this->name = $name;
@@ -61,5 +60,10 @@ class Product
     public function calculateMarkup(float $cost): float
     {
         return $this->price / $cost;
+    }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
     }
 }
