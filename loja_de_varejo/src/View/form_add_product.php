@@ -10,7 +10,22 @@
 </head>
 
 <body>
-    <form action="../controller/Product.php" method="POST">
+    <header class="bg-blue-400">
+        <nav>
+            <ul class="flex">
+                <li>
+                    <a href="../../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="form_add_product.php">Novo produto</a>
+                </li>
+                <li>
+                    <a href="form_add_provider.php">Novo Fornecedor</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <form action="../controller/Product.php?operation=insert" method="POST">
         <section class="mx-4 mt-4 columns-3">
             <article>
                 <label for="barCode" class="cursor-pointer">Código de barra: </label>
