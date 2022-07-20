@@ -9,6 +9,7 @@ use APP\Utils\Redirect;
 use APP\Model\Validation;
 use APP\Model\Product;
 use APP\Model\Provider;
+use PDOException;
 
 if (empty($_GET['operation'])) {
     Redirect::redirect(message: 'Nenhuma operação foi informada!!!', type: 'error');
@@ -74,7 +75,13 @@ function insertProduct()
             provider: new Provider()
         );
         $dao = new ProductDAO();
-        $result = $dao->insert($product);
+        try {
+            $result = $dao->insert($product);
+        } catch (PDOException $e) {
+            Redirect::redirect(message: 'Lamento, houve um erro inesperado na execução do sistema!!!', type: 'error');
+            // Tratar de notificar a equipe
+            // $e->getMessage();
+        }
         if ($result)
             Redirect::redirect(
                 message: 'Produto cadastrado com sucesso!!!'
@@ -89,7 +96,11 @@ function insertProduct()
 function listProducts()
 {
     $dao = new ProductDAO();
-    $products = $dao->findAll();
+    try {
+        $products = $dao->findAll();
+    } catch (PDOException $e) {
+        Redirect::redirect(message: 'Lamento, houve um erro inesperado na execução do sistema!!!', type: 'error');
+    }
     session_start();
     if ($products) {
         $_SESSION['list_of_products'] = $products;

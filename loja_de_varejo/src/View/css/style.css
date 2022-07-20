@@ -592,6 +592,10 @@ video {
   }
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -605,8 +609,24 @@ video {
   margin-top: 0.75rem;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
+.mt-9 {
+  margin-top: 2.25rem;
+}
+
+.mt-96 {
+  margin-top: 24rem;
+}
+
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .h-screen {
@@ -615,6 +635,10 @@ video {
 
 .w-2\/4 {
   width: 50%;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .cursor-pointer {
@@ -675,6 +699,11 @@ video {
 .bg-red-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .p-3 {
