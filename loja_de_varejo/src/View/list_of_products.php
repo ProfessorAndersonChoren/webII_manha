@@ -22,6 +22,9 @@
                 <li>
                     <a href="form_add_provider.php">Novo Fornecedor</a>
                 </li>
+                <li>
+                    <a href="../controller/Product.php?operation=list">Listar produtos</a>
+                </li>
             </ul>
         </nav>
     </header>
